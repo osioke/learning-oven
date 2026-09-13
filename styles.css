@@ -320,7 +320,7 @@ text.pie-label.dim{ fill: rgba(234,230,220,0.75); }
 .step-bar.three{ fill: var(--forest); opacity: 0.2; }
 .step-num{ font-family: var(--sans); font-weight: 700; font-size: 13px; }
 .step-title{ font-family: var(--serif); font-weight: 600; font-size: 17px; }
-.step-copy{ font-size: 11px; }
+.step-copy{ font-size: 13.5px; }
 .step{ opacity: 0.25; transition: opacity 0.5s ease; }
 .step.revealed{ opacity: 1; }
 
@@ -348,10 +348,20 @@ text.pie-label.dim{ fill: rgba(234,230,220,0.75); }
   content:"";
   position:absolute;
   top:-1.6rem;
-  left:0;
+  left:-4px;
   width:8px; height:8px;
   border-radius:50%;
   background: var(--ink);
+}
+.timeline::after{
+  content:"";
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:70px;
+  background: linear-gradient(to right, transparent, var(--paper));
+  pointer-events:none;
 }
 .timeline-item .t-year{ font-family: var(--sans); font-size: 0.75rem; color: var(--brick); font-weight:700; }
 .timeline-item h3{ font-family: var(--sans); font-size: 0.98rem; margin: 0.25rem 0 0.35rem; }

@@ -163,6 +163,37 @@
   }
   wireStepDiagram("diagram-c-widget", "diagram-c-play");
 
+  // ---------- Wrap long SVG text labels onto multiple lines ----------
+  // (the [data-wrap] attribute gives an approximate max characters per line;
+  // SVG <text> doesn't wrap on its own, so without this the community-progression
+  // captions would render as one very long unbroken line)
+  function wrapSvgText(el) {
+    var maxChars = parseInt(el.getAttribute("data-wrap"), 10) || 30;
+    var words = el.textContent.trim().split(/\s+/);
+    var x = el.getAttribute("x");
+    var lines = [];
+    var current = "";
+    words.forEach(function (word) {
+      var candidate = current ? current + " " + word : word;
+      if (candidate.length > maxChars && current) {
+        lines.push(current);
+        current = word;
+      } else {
+        current = candidate;
+      }
+    });
+    if (current) lines.push(current);
+    el.textContent = "";
+    lines.forEach(function (line, i) {
+      var tspan = document.createElementNS("http://www.w3.org/2000/svg", "tspan");
+      tspan.setAttribute("x", x);
+      tspan.setAttribute("dy", i === 0 ? "0" : "1.25em");
+      tspan.textContent = line;
+      el.appendChild(tspan);
+    });
+  }
+  document.querySelectorAll("[data-wrap]").forEach(wrapSvgText);
+
   // ---------- Timeline ----------
   var timelineData = [
     { year: "2016", title: "Devcenter & the observation", copy: "Matching business hits a supply ceiling; peer upskilling noticed happening on its own." },

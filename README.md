@@ -30,7 +30,8 @@ Vanilla HTML, CSS, and JavaScript. No framework, no build step, no package manag
 .
 ├── index.html      structure, and both tiers' full text
 ├── styles.css      layout, type, and colour
-└── script.js       depth switching, chapter navigation, diagram interactions
+├── script.js       depth switching, chapter navigation, diagram interactions
+└── LICENSE         code license (see below)
 ```
 
 The two content tiers, the chapter rail, and the diagram placements were generated from the original source files with a small Python build step (not included in this repo, since the source markdown is the author's own long-form drafts) &mdash; but the shipped site itself has no server-side or build-time dependency. It's static output, meant to be read straight out of the files.
@@ -49,7 +50,9 @@ Anyone working on community-led economics, open-source-style learning loops, or 
 
 ## Licence
 
-The code (HTML/CSS/JS) in this repository may be reused freely. The written account, the diagrams, and their content are Osioke Itseuwa's own work and are not covered by that same permission &mdash; please ask before reusing the text or diagrams elsewhere. *(If you'd rather formalise this with an actual LICENSE file &mdash; e.g. MIT for the code, all-rights-reserved for the content &mdash; let me know and I can set that up properly.)*
+The code (HTML/CSS/JS) is under a custom licence in [`LICENSE`](./LICENSE): free to use, fork, and build on, provided you (1) credit this project, (2) share any improvements back under the same terms, and (3) come talk to me about sharing a fair portion of the gain if you or your organisation ever profits from it. That last part isn't a standard, automatically-enforced open-source clause — the LICENSE file explains exactly what it is and isn't, plainly, so read that before relying on it.
+
+The written account, the diagrams, and their content are Osioke Itseuwa's own work and sit outside that licence entirely — please ask before reusing the text or diagrams elsewhere.
 
 ## Author
 
