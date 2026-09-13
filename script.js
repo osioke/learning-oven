@@ -15,6 +15,13 @@
     switchBtns.forEach(function (b) {
       b.classList.toggle("active", b.dataset.tier === tier);
     });
+    var shellEl = document.querySelector(".shell");
+    // The rail column only exists in the grid when the Full tier is showing.
+    // Driving this from JS (rather than baking a fixed grid into the HTML)
+    // means the layout can never end up with an empty 220px track reserved
+    // for a rail that isn't there \u2014 whichever tier is active always gets
+    // the grid it actually needs.
+    if (shellEl) shellEl.classList.toggle("has-rail", tier === "full");
     if (rail) rail.hidden = tier !== "full";
     if (!opts.silent) {
       try {
