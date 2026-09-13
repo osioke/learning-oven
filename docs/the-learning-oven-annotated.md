@@ -1,0 +1,70 @@
+# The Learning Oven
+### Annotated
+
+*A note before this starts. This is a mid-length account of an idea I've been building, in a few different forms and under a few different names, for close to a decade. It's written to stand on its own — every person, place, and number is explained where it comes up, so nothing here depends on you already knowing me or having read anything else. A fuller version, with everything told in complete detail, exists alongside this one. This is the shorter read.*
+
+---
+
+At Devcenter.co — a Nigerian community of developers, designers, and other technical people in Lagos, which I managed starting in 2016 — we ran a matching business alongside the community itself. Clients came to us needing technical work done, and we connected them to developers and designers from the community, managing the project in between. That was how we made money.
+
+The constant problem was supply. We never had enough people in the community skilled enough to deliver client work well, and that shortage was the actual ceiling on the business, not a minor friction at its edge.
+
+While living inside that problem, I noticed something odd. People who'd been asking beginner-level questions a few months earlier were now fielding hard ones from other members. Not one standout person — a repeated pattern, with nobody managing it on purpose.
+
+That observation became the real question. If this acceleration was happening organically, could the mechanism underneath it be found, taken apart, and deliberately switched on — made to happen faster, for more people, on purpose? If so, the matching business wouldn't be limited by whatever supply of skilled people happened to show up naturally. We could manufacture the supply directly: take an ordinary group of people with no special starting advantage, deliberately produce skilled talent out of them, and then do what the business was already doing — place them on real work, manage it, take a share of the value. I thought about this the way China had built wealth through manufacturing and construction, training a workforce and putting its output to use at scale. I wanted to do the equivalent for tech, with skilled people as the output instead of steel.
+
+---
+
+So I went looking for the mechanism. People were contributing to real open-source projects — working software, not practice exercises. When someone hit something they didn't understand, they'd ask, someone else on the project would answer, they'd apply the answer, often get it half-right, get more feedback, fix it, move on. Task, feedback, improvement, more task, continuously.
+
+It wasn't a course. It was closer to an oven — heat applied continuously until what comes out is structurally changed, not just decorated. And it worked fast specifically because the loop was tight. Answers came back within hours, sometimes minutes, while the mistake was still fresh enough for the correction to actually reshape how someone thought about the problem. Speed of return was doing as much work as the content of the feedback itself.
+
+Underneath that sat a second thing I noticed later: people weren't contributing because they'd been told to. The projects were genuinely good — work that carried real social weight in the community, the kind of thing you wanted your name attached to. Learning was a side effect of people chasing something they actually wanted, not homework under obligation.
+
+---
+
+The first deliberate attempt to build a system around this was called **Learn by Doing** — combining real project work, tasks broken into manageable pieces, and one-on-one apprenticeship mentoring. It failed in a specific, undramatised way: real enthusiasm at the start, a consistent drop-off after roughly two weeks, and incentives that didn't fix it.
+
+That failure sent me looking at why other learning environments didn't have this problem. Two reference points mattered. **The altMBA** — an online leadership programme founded by Seth Godin in 2015, run through his company Akimbo — reported a 96% completion rate against a documented 4% industry average for online courses. Its CEO, Marie Schacht, explained the mechanism directly: "People add the learning time to their calendars and for them, it is time with other people, not just time to learn." **Josh Kaufman's** 2013 talk on learning any skill in roughly 20 hours broke the process into four steps: deconstruct the skill, learn enough to self-correct, remove barriers to practice, then practise for at least 20 hours.
+
+These two reference points became **Frintern** (later continued as techstarta.com), with Kaufman's four steps mapped to four real mechanisms: skills deconstructed through first-principles reasoning plus interviews with real practitioners, producing compressed mental models; free resources restructured into microlearning; a personalisation system matching people to skill paths suited to their natural affinities; and structured "Learning Labs" putting people directly onto real projects.
+
+In pilot workshops run **March to May 2018**, participants using this system learned a skill and applied it to build something functional in **2 to 3 hours**, down from Kaufman's 20-hour baseline. This is the only hard, dated TTLS (Time-to-Learn-Skills) figure anywhere in this body of work — never reproduced at larger scale since. After explaining the resulting system to Sean Burrowes, then COO at Ingressive, he called it "The Innovation Engine." It became the **Growth and Innovation System**.
+
+---
+
+The system's structure was tested through real paid training, not just refined internally. At the **African Fintech Foundry** — a Nigerian fintech accelerator — I trained the first cohort of their Accelerator Programme, delivering five named frameworks: **Design, Business, User, Market, Project**. Participants realised mid-programme they'd been building a product first and searching for a market afterward, and needed to reverse that. A second engagement followed, brought in directly by Hugo Obi, founder of Maliyo Games, ahead of a product launch — with real reluctance on both sides at the outset, and direct feedback afterward that refined the material further.
+
+The substance behind those five frameworks came from direct observation of real Lagos communities, not imported theory. The clearest single piece of evidence: the **Five-Star Dilemma**. Three people, asked about how they used star-rating apps, gave three genuinely different, coherent philosophies none of them would have volunteered if simply asked to describe their "approach." One refused to rate a reckless driver poorly — "that's where he eats." A second gave three stars for a genuinely good meal, reserving five for God, "only God is perfect." A third ignored ratings entirely unless something was exceptional. Three real decision policies, invisible until you watched what each person actually did. This is the load-bearing insight underneath everything that follows: behaviour is more honest than self-report, and judgement lives in the pattern of what someone does, not in how they explain it afterward.
+
+Other frameworks trace to other specific places: a vendor at TKD Farms Market in Lagos who turned a single customer suggestion into a new product through direct collaboration; a taco restaurant, El Padrino, whose personal-relationship approach made its customer base follow it through multiple relocations; a diner that built loyalty by treating the 6pm-to-5am night-shift crowd as its actual primary audience rather than an afterthought; a dance studio that converted free classes into paid students by making learning a community experience rather than a sale.
+
+---
+
+By 2019, this full picture was published as an open-access book, *Building Communities into Economies*, and captured in a diagram — the rawest, most complete version of the system that ever existed. It showed a problem, fed by a depressed local economy and shared pain points, moving through design thinking into an idea, built on local contributors (community members, mentors, sponsors, investors, government) and informational resources (local knowledge, open resources, bite-sized content), passing through the five frameworks into a homegrown product or service — which then fed back out to government, local partners, the community, and investors. Read whole, it wasn't describing a learning mechanism alone. It was describing a complete economic loop.
+
+Around the same time, an alpha training cohort applied this to build **Owmi** — a chatbot-and-app platform connecting Lagos residents to trusted, treated water sources, built directly from real interviews about a real problem. One resident described daily water costs as "costly"; another said "someone bringing cold water to the house would be bae." Owmi was fully prototyped, tested with real users, and its own materials stated plainly, "currently being built out." It was never meant to prove the whole system worked — only that a group could build something of real value while learning. At that scale, it did. It wasn't continued, honestly, because it required ongoing physical, in-person operational work at a point when the direction had shifted toward digital products without that weight.
+
+---
+
+The work continued as **Growth Clinic**, positioned around crowdsourcing local ingenuity into "shared prosperity" — training priced per person, plus placement fees, targeting students and early startups. A sub-brand, **Community Staples**, tried to build a large enough network of communities for the idea to operate at scale. Neither found its audience, and Growth Clinic wound down at the end of 2025.
+
+Two compounding shifts explain most of it. The first: moving away from Devcenter's original model — place people in real paid work, take a share of the value — toward selling training directly. This wasn't a considered choice; it came from chasing the first clear signal that looked like proof, since the AFF engagement had started as testing and its payment felt, at the time, like the market speaking. The second, separate shift: moving from Maliyo Games' kind of customer — a real company — toward individual people paying for training themselves, a different sales motion with far less room for the buyer to take a bet on their own improvement. Together, these moved the business about as far as it could get from what had actually worked at Devcenter. People weren't buying training because they wanted training. They wanted income, and the later model asked them to pay upfront for the possibility of it later.
+
+The visual explanation of the system changed alongside this. A later diagram compressed everything into three slices — Thinking Frameworks, Local Contributors, Smart Micro-content — around a central label. Missing entirely: the product or service, and every arrow leading back out to government, partners, community, investors. This wasn't a deliberate edit. Almost nobody who saw the original, fuller diagram understood it — too many arrows, too many boxes. Afraid of losing the chance to communicate the idea at all, I brought in a designer to make it legible, and they succeeded completely at that. What went unnoticed was that legibility and completeness were pulling in opposite directions, and the piece that quietly disappeared was the one that made the system more than a learning method.
+
+---
+
+In 2025, a whitepaper called *From Knowledge to Judgement* re-articulated the same idea under a proposed name, **Human Operating System**, organised into Instructional Deconstruction (the skill-deconstruction process from Frintern, formalised as a "Career Recipe"), the same five Thinking Frameworks, and a proposed **Execution Loop**. Two tools named in that paper's brief as though live — **SYD Protocol** and **Slop Runner** — had never actually reached a real user; both were exploratory builds made to think through a concept, not deployed products. Looking back, the name itself no longer fits: "operating system" implies automated infrastructure, which is exactly the part that was never proven, while almost everything genuinely tested across this whole account happened through direct, human-delivered work. The name has been dropped.
+
+A current, separate thread is **LORE** — a live product aimed at organisational knowledge transfer, capturing what an experienced employee knows before they leave, without asking them to document their own reasoning. It's built around the same principle as the Five-Star Dilemma: people are more reliable in what they do than in how they explain it. Worth noting, "recipe" as a way of thinking predates this whitepaper considerably — understanding computer algorithms as recipes, then later understanding people's mental models the same way, came first; the whitepaper just gave an old habit of thought a formal name.
+
+**LORE is not a success case. It's being tested right now, unresolved.** An HR manager who saw the first version asked, in effect, why use it when the same work could be done manually — an objection that directly triggered a full revamp currently in progress. A separate internal test of the extraction method produced a result honestly diagnosed as "correct but generic," traced to two specific, fixable gaps rather than left vague.
+
+---
+
+Four attempts, nine years, the same idea underneath each one: people are more reliable in what they do than in how they'd explain it. Two of the four worked at the level of the actual mechanism and still failed commercially. One never left the exploratory stage. One is live and unresolved right now.
+
+Two real questions remain open. Whether the original engine — a community upskilled, then matched to real paid work, with a share of that value as the business model — is the piece that quietly went missing between the raw diagram and the simplified one, and worth rebuilding directly. And, separately, whether the knowledge-to-judgement work now running through LORE is worth continuing on its own terms, whether or not it ever reconnects to the rest.
+
+Neither has an answer yet.

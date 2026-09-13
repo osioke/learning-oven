@@ -1,0 +1,374 @@
+/* ===========================================================
+   The Learning Oven — stylesheet
+   Paper/ink palette pulled from the source diagrams themselves.
+   =========================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Archivo:wght@400;500;600;700&display=swap');
+
+:root{
+  --paper: #EAE6DC;
+  --paper-raised: #F2EFE7;
+  --paper-dim: #DCD7C9;
+  --ink: #26221E;
+  --ink-soft: #4B453E;
+  --ink-faint: #837B6E;
+  --brick: #8A3B2A;
+  --brick-dim: #C98F7E;
+  --forest: #2E5A44;
+  --forest-dim: #9CBBAB;
+  --line: rgba(38,34,30,0.14);
+  --serif: "Fraunces", ui-serif, Georgia, "Iowan Old Style", serif;
+  --sans: "Archivo", ui-sans-serif, "Segoe UI", system-ui, sans-serif;
+  --measure: 65ch;
+  --radius: 8px;
+}
+
+*{ box-sizing: border-box; }
+html{ scroll-behavior: smooth; }
+
+body{
+  margin:0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 19px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior:auto; }
+  *{ animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}
+
+::selection{ background: var(--brick-dim); color: var(--ink); }
+
+a{ color: inherit; }
+h1,h2,h3{ font-family: var(--serif); font-weight: 600; line-height:1.15; margin: 0 0 0.4em; }
+p{ margin: 0 0 1.3em; max-width: var(--measure); }
+strong{ font-weight: 600; }
+em{ font-style: italic; }
+
+/* ---------- Top chrome ---------- */
+.site-header{
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 1.5rem;
+  background: rgba(234,230,220,0.92);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--line);
+  font-family: var(--sans);
+}
+
+.brand{
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.depth-switch{
+  display:flex;
+  gap: 0.25rem;
+  background: var(--paper-dim);
+  border-radius: 999px;
+  padding: 3px;
+}
+.depth-switch button{
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.4rem 0.9rem;
+  border: none;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+.depth-switch button.active{
+  background: var(--ink);
+  color: var(--paper);
+}
+.depth-switch button:focus-visible, button:focus-visible, a:focus-visible{
+  outline: 2px solid var(--brick);
+  outline-offset: 2px;
+}
+
+/* ---------- Layout shell ---------- */
+.shell{
+  display:grid;
+  grid-template-columns: 1fr;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+@media (min-width: 980px){
+  .shell.has-rail{
+    grid-template-columns: 220px minmax(0,1fr);
+    gap: 3rem;
+  }
+}
+
+/* ---------- Hero ---------- */
+.hero{
+  max-width: 900px;
+  margin: 4.5rem auto 2.5rem;
+  padding: 0 1.5rem;
+  text-align: left;
+}
+.hero .kicker{
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--brick);
+  margin-bottom: 0.9rem;
+}
+.hero h1{
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  max-width: 14ch;
+}
+.hero p.deck{
+  font-size: 1.2rem;
+  color: var(--ink-soft);
+  max-width: 46ch;
+}
+.hero .begin-btn{
+  display:inline-block;
+  margin-top: 1.2rem;
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.75rem 1.4rem;
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: var(--radius);
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+.hero .begin-btn:hover{ transform: translateY(-1px); }
+
+/* ---------- Chapter rail ---------- */
+.chapter-rail{
+  position: sticky;
+  top: 5.2rem;
+  align-self: start;
+  max-height: calc(100vh - 7rem);
+  overflow-y: auto;
+  font-family: var(--sans);
+  padding-bottom: 2rem;
+}
+.chapter-rail ul{ list-style:none; margin:0; padding:0; }
+.chapter-rail li{ margin-bottom: 0.15rem; }
+.chapter-rail a{
+  display:flex;
+  gap: 0.6rem;
+  align-items:baseline;
+  text-decoration:none;
+  padding: 0.4rem 0.5rem;
+  border-radius: 6px;
+  color: var(--ink-faint);
+  font-size: 0.86rem;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+.chapter-rail a:hover{ background: var(--paper-raised); color: var(--ink); }
+.chapter-rail a.current{ color: var(--ink); background: var(--paper-raised); font-weight: 600; }
+.chapter-rail .rail-num{
+  font-variant-numeric: oldstyle-nums;
+  color: var(--brick);
+  font-size: 0.75rem;
+  min-width: 2.4em;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+.chapter-rail-toggle{ display:none; }
+
+/* ---------- Reading column ---------- */
+.reading{ min-width: 0; padding-bottom: 8rem; }
+
+.tier-title{ margin: 1rem 0 2rem; }
+.tier-title h1{ font-size: 2.1rem; }
+.tier-subtitle{ font-family: var(--sans); color: var(--ink-faint); font-size: 0.95rem; margin:0; }
+
+p.lede{ font-size: 1.15rem; color: var(--ink-soft); }
+
+.chapter{ padding-top: 2.4rem; margin-top: 1rem; border-top: 1px solid var(--line); scroll-margin-top: 5rem; }
+.chapter:first-of-type{ border-top: none; }
+.chapter-head{ margin-bottom: 1.2rem; }
+.chapter-eyebrow{
+  display:block;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--brick);
+  margin-bottom: 0.3rem;
+}
+.chapter h2{ font-size: 1.6rem; max-width: 24ch; }
+
+.ann-section{ padding-top: 2rem; margin-top: 1rem; border-top: 1px solid var(--line); scroll-margin-top: 5rem; }
+.ann-section:first-of-type{ border-top:none; }
+
+/* The account's own final line, wherever it falls \u2014 no text is added, only emphasis. */
+.tier-full .chapter:last-of-type p:last-of-type,
+.tier-annotated .ann-section:last-of-type p:last-of-type{
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--line);
+  font-style: italic;
+  color: var(--ink-soft);
+  font-size: 1.15rem;
+}
+
+/* ---------- Status tags ---------- */
+.status-line{ margin: -0.6em 0 1.4em; }
+.status-tag{
+  display:inline-block;
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  padding: 0.32rem 0.65rem;
+  border-radius: 999px;
+  background: var(--paper-dim);
+  color: var(--ink-soft);
+  border: 1px solid var(--line);
+}
+.status-tag[data-status="lore"]{ background: rgba(46,90,68,0.12); color: var(--forest); border-color: rgba(46,90,68,0.3); }
+.status-tag[data-status="hos"]{ background: rgba(138,59,42,0.1); color: var(--brick); border-color: rgba(138,59,42,0.28); }
+
+/* ---------- Diagram widgets ---------- */
+.diagram-widget{
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1.4rem 1.4rem 1.6rem;
+  margin: 1.6rem 0 2.2rem;
+  max-width: none;
+}
+.diagram-caption{
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  color: var(--ink-faint);
+  margin-bottom: 0.6rem;
+}
+.diagram-stage{ width:100%; }
+.diagram-stage svg{ width:100%; height:auto; display:block; }
+.diagram-stage.small svg{ max-width: 640px; margin: 0 auto; display:block; }
+
+.d-circle{ fill: var(--paper); stroke: var(--ink); stroke-width: 1.4; }
+.d-box.product{ fill: var(--paper); stroke: var(--ink); stroke-width: 1.4; }
+.d-arrow{ stroke: var(--ink-faint); stroke-width: 1.4; marker-end: none; }
+.d-arrow.out{ stroke: var(--brick); }
+.d-label{ font-family: var(--sans); fill: var(--ink); font-size: 15px; }
+.d-label.small{ font-size: 13px; }
+.d-label.tiny{ font-size: 10.5px; }
+.d-label.dim{ fill: var(--ink-faint); }
+.d-label.center{ text-anchor: middle; }
+.d-label.mid{ text-anchor: middle; }
+.d-label.small-strong{ font-size: 13px; font-weight: 600; text-anchor: middle; }
+
+#layer-a, #layer-a-2, #layer-a-ann{ transition: opacity 0.5s ease; }
+#layer-b, #layer-b-2, #layer-b-ann{ transition: opacity 0.6s ease 0.35s; }
+#a-outbound, #a-outbound-2, #a-outbound-ann{ transition: opacity 0.5s ease, transform 0.5s ease; transform-origin: 680px 250px; }
+#a-outbound.fading, #a-outbound-2.fading, #a-outbound-ann.fading{ opacity: 0; transform: scale(0.85); }
+#a-core, #a-core-2, #a-core-ann{ transition: opacity 0.5s ease 0.15s; }
+
+.pie-slice.tf{ fill: var(--brick); opacity: 0.88; }
+.pie-slice.lc{ fill: var(--ink); opacity: 0.85; }
+.pie-slice.smc{ fill: var(--forest); opacity: 0.88; }
+.d-circle.center-hub{ fill: var(--paper); }
+.pie-label{ fill: var(--paper); }
+text.pie-label.dim{ fill: rgba(234,230,220,0.75); }
+
+.diagram-controls{ margin-top: 1rem; }
+.diagram-btn{
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 0.88rem;
+  padding: 0.6rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid var(--ink);
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.diagram-btn:hover{ background: var(--ink); color: var(--paper); }
+.diagram-btn.small{ margin-top: 0.9rem; }
+.diagram-note{
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  margin: 0.7rem 0 0;
+  max-width: 56ch;
+}
+
+/* step diagram (community progression) */
+.step-bar{ fill: var(--paper-dim); stroke: var(--line); }
+.step-bar.one{ fill: var(--brick); opacity: 0.18; }
+.step-bar.two{ fill: var(--ink); opacity: 0.14; }
+.step-bar.three{ fill: var(--forest); opacity: 0.2; }
+.step-num{ font-family: var(--sans); font-weight: 700; font-size: 13px; }
+.step-title{ font-family: var(--serif); font-weight: 600; font-size: 17px; }
+.step-copy{ font-size: 11px; }
+.step{ opacity: 0.25; transition: opacity 0.5s ease; }
+.step.revealed{ opacity: 1; }
+
+/* ---------- Timeline ---------- */
+.timeline-wrap{
+  margin: 0 auto 3rem;
+  max-width: 1180px;
+  padding: 0 1.5rem;
+}
+.timeline{
+  display:flex;
+  gap: 0;
+  border-top: 2px solid var(--ink);
+  position: relative;
+  padding-top: 1.6rem;
+  overflow-x: auto;
+}
+.timeline-item{
+  flex: 1 1 0;
+  min-width: 160px;
+  position: relative;
+  padding-right: 1.2rem;
+}
+.timeline-item::before{
+  content:"";
+  position:absolute;
+  top:-1.6rem;
+  left:0;
+  width:8px; height:8px;
+  border-radius:50%;
+  background: var(--ink);
+}
+.timeline-item .t-year{ font-family: var(--sans); font-size: 0.75rem; color: var(--brick); font-weight:700; }
+.timeline-item h3{ font-family: var(--sans); font-size: 0.98rem; margin: 0.25rem 0 0.35rem; }
+.timeline-item p{ font-family: var(--sans); font-size: 0.82rem; color: var(--ink-soft); max-width: 26ch; margin:0; }
+
+/* ---------- Footer ---------- */
+.site-footer{
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  color: var(--ink-faint);
+  text-align:center;
+  padding: 3rem 1.5rem 4rem;
+}
+
+/* ---------- Utility ---------- */
+[hidden]{ display:none !important; }
+
+@media (max-width: 640px){
+  body{ font-size: 17px; }
+  .hero{ margin-top: 2.5rem; }
+  .site-header{ padding: 0.7rem 1rem; }
+  .brand{ font-size: 0.92rem; }
+}
